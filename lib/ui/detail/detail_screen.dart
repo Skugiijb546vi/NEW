@@ -100,7 +100,7 @@ class DetailScreen extends ConsumerWidget {
                         height: 50,
                         child: ElevatedButton.icon(
                           onPressed: () {
-                            context.push('/player/${widget.section}/${widget.movieId}');
+                            context.push('/player/$section/$movieId');
                           },
                           icon: const Icon(Icons.play_arrow),
                           label: const Text('سەیرکردن'),

@@ -3,7 +3,7 @@ name: Build Flutter APK
 on:
   push:
     branches: [ "main", "master" ]
-  workflow_dispatch:
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs:
   build:
@@ -28,6 +28,9 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+        
+      - name: Generate Code
+        run: dart run build_runner build --delete-conflicting-outputs
 
       - name: Build APK
         run: flutter build apk --release
